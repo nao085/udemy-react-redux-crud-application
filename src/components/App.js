@@ -5,7 +5,7 @@ import { increment, decrement}  from '../actions'
 
 class App extends Component {
   render() {
-    const props = this,props
+    const props = this.props
     return(
       <React.Fragment>
         <div>value: { props.value }</div>
@@ -16,7 +16,7 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = store => ({ value: StaticRange.count.value })
+const mapStateToProps = state => ({ value: state.count.value })
 const mapDispatchToProps = dispatch => ({
   increment: () => dispatch(increment()),
   decrement: () => dispatch(decrement())
